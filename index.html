@@ -1,0 +1,111 @@
+<html>
+<style>
+    .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-algin: center;
+    }
+    table {
+        width: 100%;
+    }
+    .table-header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        text-algin: center;
+        margin-top: 10px;
+
+    }
+    input, button {
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+<script>
+    function updateTable() {
+        var salary = document.getElementById('salary').value;
+        document.getElementById('boende').innerHTML = Math.round(0.25 * salary);
+        document.getElementById('livsmedel').innerHTML = Math.round(0.14 * salary);
+        document.getElementById('transporter').innerHTML = Math.round(0.14 * salary);
+        document.getElementById('kultur').innerHTML = Math.round(0.12 * salary);
+        document.getElementById('restaurants').innerHTML = Math.round(0.07 * salary);
+        document.getElementById('clothes').innerHTML = Math.round(0.05 * salary);
+        document.getElementById('household_devices').innerHTML = Math.round(0.06 * salary);
+        document.getElementById('alc_tob').innerHTML = Math.round(0.04 * salary);
+        document.getElementById('health').innerHTML = Math.round(0.04 * salary);
+        document.getElementById('com').innerHTML = Math.round(0.04 * salary);
+        document.getElementById('edu').innerHTML = Math.round(0.01 * salary);
+        document.getElementById('random').innerHTML = Math.round(0.06 * salary);
+        document.getElementById('sum').innerHTML = salary;
+    }
+</script>
+<body>
+    <div class="container">
+        <div class="table-header">
+            <input type="number" id="salary" placeholder="Nettoinkomst" value="26500" onkeydown="if (event.keyCode == 13) updateTable()"/>
+            <button onclick="updateTable()">Calculate</button>
+        </div>
+        <table width="300px" border="0">
+            <tr>
+                <td>Boende</td>
+                <td id="boende">6652</td>
+            </tr>
+            <tr>
+                <td>Livsmedel</td>
+                <td id="livsmedel">3684</td>
+            </tr>
+            <tr>
+                <td>Transporter</td>
+                <td id="transporter">3578</td>
+            </tr>
+            <tr>
+                <td>Kultur</td>
+                <td id="kultur">3180</td>
+            </tr>
+            <tr>
+                <td>Restauranger</td>
+                <td id="restaurants">1776</td>
+            </tr>
+            <tr>
+                <td>Kläder</td>
+                <td id="clothes">1405</td>
+            </tr>
+            <tr>
+                <td>Hushållsapparater</td>
+                <td id="household_devices">1458</td>
+            </tr>
+            <tr>
+                <td>Alkohol o Tobak</td>
+                <td id="alc_tob">1034</td>
+            </tr>
+            <tr>
+                <td>Hälsa o sjukvård</td>
+                <td id="health">1007</td>
+            </tr>
+            <tr>
+                <td>Telefon o internet</td>
+                <td id="com">928</td>
+            </tr>
+            <tr>
+                <td>Utbildning</td>
+                <td id="edu">133</td>
+            </tr>
+            <tr>
+                <td>Övrigt</td>
+                <td id="random">1670</td>
+            </tr>
+            <tr>
+                <td>Summa</td>
+                <td id="sum">26500</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
